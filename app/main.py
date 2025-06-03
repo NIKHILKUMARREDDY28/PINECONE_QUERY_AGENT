@@ -1,7 +1,9 @@
-import os
+# app/main.py
 import sys
+import os
 
 sys.path.append(os.getcwd())
+print(os.getcwd())
 from fastapi import FastAPI
 
 
