@@ -2,10 +2,12 @@
 import sys
 import os
 
-from app.query_agent.agent import get_pinecone_query_from_natural_language_query
 
 sys.path.append(os.getcwd())
 print(os.getcwd())
+
+from app.query_agent.agent import get_pinecone_query_from_natural_language_query
+
 from fastapi import FastAPI
 
 
