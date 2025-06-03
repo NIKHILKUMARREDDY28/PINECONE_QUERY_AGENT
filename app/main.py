@@ -2,6 +2,8 @@
 import sys
 import os
 
+from app.query_agent.agent import get_pinecone_query_from_natural_language_query
+
 sys.path.append(os.getcwd())
 print(os.getcwd())
 from fastapi import FastAPI
@@ -16,9 +18,10 @@ async def generate_query(query: str):
     """
     Generate a query based on the provided input.
     """
-    # Placeholder for query generation logic
-    # In a real application, you would implement the logic to generate a query here.
-    return {"query": f"Generated query for: {query}"}
+    pinecone_query = get_pinecone_query_from_natural_language_query(query)
+    return {
+        "query": pinecone_query
+    }
 
 
 if __name__ == "__main__":
