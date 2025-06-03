@@ -25,7 +25,7 @@ WORKDIR /app
 # Copy only the dependency files first for better caching.
 COPY pyproject.toml ./
 
-
+RUN poetry install --no-root
 
 # Copy the rest of your application code.
 COPY . .
